@@ -11,7 +11,6 @@ Compatible-Versions: [0.0.1, 0.0.2]
 Cartridge-Vendor: lsm5
 Vendor: redhat
 Categories:
-  - web_framework
   - experimental
 Website:
 Help-Topics:
