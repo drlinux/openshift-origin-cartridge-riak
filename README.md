@@ -1,2 +1,3 @@
 # OpenShift RIAK Cartridge
-This cartridge is documented in the [Cartridge Guide](http://openshift.github.io/documentation/oo_cartridge_guide.html#riak).
+This cartridge is a shameless DIY ripoff, getting awesome by the second of
+course.
