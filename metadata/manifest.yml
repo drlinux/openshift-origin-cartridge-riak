@@ -8,7 +8,7 @@ Source-Url: https://github.com/lsm5/openshift-origin-cartridge-riak.git
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Cartridge-Version: 0.0.3
 Compatible-Versions: [0.0.1, 0.0.2]
-Cartridge-Vendor: redhat
+Cartridge-Vendor: lsm5
 Vendor: redhat
 Categories:
   - web_framework
