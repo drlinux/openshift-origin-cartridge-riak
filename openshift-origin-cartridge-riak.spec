@@ -4,7 +4,7 @@ Summary:        RIAK cartridge
 Name:           openshift-origin-cartridge-riak
 Version:        0.1
 Release:        1%{?dist}
-Group:          Development/Languages
+Group:          Network/Daemons
 License:        ASL 2.0
 URL:            https://www.openshift.com
 Source0:        http://lsm5.fedorapeople.org/%{name}/%{name}-%{version}.tar.gz
