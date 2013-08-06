@@ -2,7 +2,7 @@
 
 Summary:        RIAK cartridge
 Name:           openshift-origin-cartridge-riak
-Version:        0.0.1
+Version:        0.1
 Release:        1%{?dist}
 Group:          Development/Languages
 License:        ASL 2.0
@@ -37,5 +37,8 @@ RIAK cartridge for openshift. (Cartridge Format V2)
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Tue Aug 06 2013 Lokesh Mandvekar <lsm5@redhat.com> 0.1-1
+- version bump
+
 * Mon Aug 05 2013 Lokesh Mandvekar <lsm5@redhat.com> 0.0.1-1
 - new package built with tito
