@@ -1,9 +1,10 @@
 Name: riak
 Cartridge-Short-Name: RIAK
-Display-Name: Do-It-Yourself 0.1
-Description: "The Do-It-Yourself (RIAK) application type is a blank slate for trying unsupported languages, frameworks, and middleware on OpenShift. See the community site for examples of bringing your favorite framework to OpenShift."
+Display-Name: Riak 0.1
+Description: "OpenShift riak cartridge"
 Version: '0.1'
 License: "ASL 2.0"
+Source-Url: https://github.com/lsm5/openshift-origin-cartridge-riak.git
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Cartridge-Version: 0.0.3
 Compatible-Versions: [0.0.1, 0.0.2]
