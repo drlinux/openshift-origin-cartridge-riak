@@ -1,1 +1,0 @@
--define(COUNTER_TYPE, "application/riak_pncounter").
