@@ -1,0 +1,12 @@
+{application,sidejob,
+             [{description,[]},
+              {vsn,"0.2.0"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {registered,[]},
+              {mod,{sidejob_app,[]}},
+              {env,[]},
+              {modules,[sidejob,sidejob_app,sidejob_config,
+                        sidejob_resource_stats,sidejob_resource_sup,
+                        sidejob_stat,sidejob_sup,sidejob_supervisor,
+                        sidejob_worker,sidejob_worker_sup]}]}.
