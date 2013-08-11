@@ -1,5 +1,0 @@
-#!/bin/bash
-# The logic to start up your application should be put in this
-# script. The application will work only if it binds to
-# $OPENSHIFT_RIAK_IP:8080
-nohup $OPENSHIFT_REPO_DIR/riak/testrubyserver.rb $OPENSHIFT_RIAK_IP $OPENSHIFT_REPO_DIR/riak > $OPENSHIFT_RIAK_DIR/log/server.log 2>&1 &
