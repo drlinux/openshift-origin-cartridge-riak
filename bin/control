@@ -12,9 +12,10 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 #}
 
 function start() {
+    /usr/bin/riak $OPENSHIFT_RIAK_DIR/conf/app.config > \
+        /dev/null 2>&1 &
     echo "Starting RIAK cart"
     #run_hook start
-    riak start
 }
 
 function stop() {
