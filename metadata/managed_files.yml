@@ -10,5 +10,6 @@ locked_files:
 - tmp/
 - conf/
 - conf/*
+- usr/*
 processed_templates:
 - '**/*.erb'
