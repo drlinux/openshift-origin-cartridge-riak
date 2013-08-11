@@ -1,0 +1,16 @@
+%% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
+%% ex: ft=erlang ts=4 sw=4 et
+[
+ %% Riak Client APIs config
+ {riak_api, [
+            {pb, [ {"127.0.0.1", 8087 } ]}
+            ]},
+
+ %% Riak Core config
+ {riak_core, [
+              {ring_state_dir, "<%= ENV['OPENSHIFT_RIAK_DIR'] %> ring"},
+
+              {platform_data_dir, "<%= ENV['OPENSHIFT_RIAK_DIR'] %>"},
+              {platform_log_dir, "<%= ENV['OPENSHIFT_RIAK_LOG_DIR'] %>"}
+             ]},
+].
