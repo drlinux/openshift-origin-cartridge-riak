@@ -10,7 +10,6 @@ URL:            https://www.openshift.com
 Source0:        http://lsm5.fedorapeople.org/%{name}/%{name}-%{version}.tar.gz
 Requires:       rubygem(openshift-origin-node)
 Requires:       openshift-origin-node-util
-Requires:       erlang
 Requires:       riak
 BuildArch:      noarch
 
