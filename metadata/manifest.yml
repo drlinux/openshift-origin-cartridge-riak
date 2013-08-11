@@ -11,8 +11,11 @@ Compatible-Versions: [0.0.1, 0.0.2]
 Cartridge-Vendor: lsm5
 Vendor: redhat
 Categories:
+  - database
   - experimental
-Website:
+  - nosql
+  - service
+Website: http://basho.com/riak
 Help-Topics:
   "Getting Started": https://www.openshift.com/community/videos/getting-started-with-riak-applications-on-openshift
 Cart-Data:

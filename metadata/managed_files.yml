@@ -2,10 +2,6 @@
 locked_files:
 - bin/
 - bin/*
-- configuration/
-- configuration/etc/
-- configuration/etc/conf.d/
-- configuration/etc/conf.d/*
 - metadata/
 - env/
 - env/*
