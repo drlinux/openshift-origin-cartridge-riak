@@ -9,5 +9,6 @@ locked_files:
 - hooks/*
 - tmp/
 - conf/
+- conf/*
 processed_templates:
 - '**/*.erb'
