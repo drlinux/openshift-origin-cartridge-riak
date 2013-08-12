@@ -1,71 +1,143 @@
-#!/bin/bash
+#!/bin/sh
+#
+# riak
+#
+# chkconfig: 2345 80 30
+# description: Riak is a distributed data store
+# processname: beam
+# config: /etc/riak/app.config
+# config: /etc/riak/vm.args
+#
+
+# Source function library.
+#. /etc/rc.d/init.d/functions
+
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-#function run_hook() {
-#  local path="$OPENSHIFT_REPO_DIR/.openshift/action_hooks/$1"
-#  if [ -f "$path" -a -x "$path" ]
-#  then
-#    "$path"
-#  else
-#    return 0
-#  fi
-#}
+RETVAL=0
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+DESC="Riak is a distributed data store"
+NAME=riak
+DAEMON=/usr/sbin/$NAME
+lockfile=/var/lock/subsys/$NAME
+pidfile=/var/run/$NAME/$NAME.pid
 
-function start() {
-    /usr/bin/riak $OPENSHIFT_RIAK_DIR/conf/app.config > \
-        /dev/null 2>&1 &
-    echo "Starting RIAK cart"
-    #run_hook start
+# Check for script, config and data dirs
+[ -x /usr/sbin/$NAME ] || exit 0
+[ -d /etc/$NAME ] || exit 0
+[ -d /var/lib/$NAME ] || exit 0
+
+status -p $pidfile -l $(basename $lockfile) $NAME >/dev/null 2>&1
+running=$?
+
+check_pid_status() {
+    pid=$(ps ax | grep beam.smp | grep "\-progname $NAME" | awk '{print $1}')
+    if [ "$pid" = "" ]; then
+        # prog not running?
+        return 1
+    else
+        # running
+        return 0
+    fi
 }
 
-function stop() {
-    echo "Stopping RIAK cart"
-    #run_hook stop
-    riak stop
+start() {
+    # Start daemons.
+    echo -n $"Starting riak: "
+    $DAEMON start
+    RETVAL=$?
+    if [ $RETVAL -eq 0 ]; then
+        touch $lockfile
+        success
+    else
+        failure $"$NAME start"
+    fi
+    echo
+    return $RETVAL
 }
 
-function restart() {
-    echo "Restarting RIAK cart"
-    riak stop
-    riak start
+stop() {
+    # Stop daemon.
+    echo -n $"Shutting down riak: "
+    $DAEMON stop 2>/dev/null
+    for n in $(seq 1 10); do
+        sleep 1
+        check_pid_status
+        RETVAL=$?
+        if [ $RETVAL -eq 1 ]; then
+            break
+        fi
+    done
+    if [ $RETVAL -eq 1 ]; then
+        rm -f $lockfile $pidfile
+        success
+    else
+        failure $"$NAME stop"
+    fi
+    echo
+    return $RETVAL
 }
 
-function reboot() {
-    restart
+hardstop() {
+    echo -n $"Shutting down $NAME: "
+    su - riak -c "ps -ef | grep beam.smp | grep '\-progname $NAME ' | grep -v grep | awk '{print \$2}' | xargs kill -9"
+    for n in $(seq 1 10); do
+        sleep 1
+        check_pid_status
+        RETVAL=$?
+        if [ $RETVAL -eq 1 ]; then
+            break
+        fi
+    done
+    if [ $RETVAL -eq 1 ]; then
+        rm -f $lockfile $pidfile
+        success
+    else
+        failure $"$NAME hardstop"
+    fi
+    echo
+    return $RETVAL
 }
 
-function status() {
-   if output=$(curl http://$OPENSHIFT_RIAK_IP:$OPENSHIFT_RIAK_PORT 2>&1 )
-   then
-      client_result "Application is running"
-   else
-      client_result "Application is either stopped or inaccessible"
-   fi
-}
-
-function reload() {
-    client_result "Reloading RIAK cart"
-    restart
-}
-
-function tidy() {
-  client_message "Emptying log dir: $OPENSHIFT_RIAK_LOG_DIR"
-  shopt -s dotglob
-  rm -rf $OPENSHIFT_RIAK_LOG_DIR/*
-}
-
-function version() {
-    riak version
-}
-
+# See how we were called.
 case "$1" in
-  start)     start ;;
-  stop)      stop ;;
-  restart)   restart ;;
-  status)    status ;;
-  reload)    reload ;;
-  reboot)    reboot ;;
-  tidy)      tidy ;;
-  version)   version ;;
-  *)         exit 0
+    start)
+        [ $running -eq 0 ] && exit 0
+        start
+        ;;
+    stop)
+        if [ $running -eq 0 ]; then
+            stop
+        else
+            check_pid_status
+            RETVAL=$?
+            if [ $RETVAL -eq 1 ]; then
+                rm -f $lockfile $pidfile
+            fi
+            exit 0
+        fi
+        ;;
+    restart|force-reload)
+        [ $running -eq 0 ] && stop
+        start
+        ;;
+    hardstop)
+        [ $running -eq 0 ] || exit 0
+        hardstop
+        ;;
+    condrestart|try-restart)
+        [ $running -eq 0 ] || exit 0
+        restart
+        ;;
+    status)
+        status -p $pidfile -l $(basename $lockfile) $NAME
+        ;;
+    ping)
+        $DAEMON ping || exit $?
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart|force-reload|hardstop|condrestart|try-restart|status|ping}"
+        exit 1
 esac
+
+exit $?

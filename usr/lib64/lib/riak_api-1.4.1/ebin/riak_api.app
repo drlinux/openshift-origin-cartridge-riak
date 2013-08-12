@@ -1,0 +1,13 @@
+{application,riak_api,
+             [{description,"Riak Client APIs"},
+              {vsn,"1.4.1"},
+              {applications,[kernel,stdlib,lager,riak_core]},
+              {registered,[riak_api_sup,riak_api_pb_sup]},
+              {mod,{riak_api_app,[]}},
+              {env,[]},
+              {modules,[riak_api_app,riak_api_basic_pb_service,
+                        riak_api_pb_frame,riak_api_pb_listener,
+                        riak_api_pb_registrar,riak_api_pb_registration_helper,
+                        riak_api_pb_server,riak_api_pb_service,
+                        riak_api_pb_sup,riak_api_stat,riak_api_sup,
+                        riak_core_pb_bucket]}]}.
