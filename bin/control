@@ -41,7 +41,7 @@ check_pid_status() {
     fi
 }
 
-start() {
+function start() {
     # Start daemons.
     echo -n $"Starting riak: "
     $DAEMON start
@@ -56,7 +56,7 @@ start() {
     return $RETVAL
 }
 
-stop() {
+function stop() {
     # Stop daemon.
     echo -n $"Shutting down riak: "
     $DAEMON stop 2>/dev/null
@@ -78,7 +78,7 @@ stop() {
     return $RETVAL
 }
 
-hardstop() {
+function hardstop() {
     echo -n $"Shutting down $NAME: "
     su - riak -c "ps -ef | grep beam.smp | grep '\-progname $NAME ' | grep -v grep | awk '{print \$2}' | xargs kill -9"
     for n in $(seq 1 10); do
@@ -139,5 +139,3 @@ case "$1" in
         echo $"Usage: $0 {start|stop|restart|force-reload|hardstop|condrestart|try-restart|status|ping}"
         exit 1
 esac
-
-exit $?
