@@ -15,17 +15,17 @@
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 RETVAL=0
-PATH=/sbin:/usr/sbin:/bin:/usr/bin
+#PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Riak is a distributed data store"
 NAME=riak
-DAEMON=/usr/sbin/$NAME
-lockfile=/var/lock/subsys/$NAME
-pidfile=/var/run/$NAME/$NAME.pid
+DAEMON=$OPENSHIFT_RIAK_DIR/$NAME
+lockfile=$OPENSHIFT_RIAK_DIR/lock/subsys/$NAME
+pidfile=$OPENSHIFT_RIAK_DIR/run/$NAME.pid
 
 # Check for script, config and data dirs
 [ -x /usr/sbin/$NAME ] || exit 0
-[ -d /etc/$NAME ] || exit 0
-[ -d /var/lib/$NAME ] || exit 0
+[ -d $OPENSHIFT_RIAK_DIR/etc/ ] || exit 0
+[ -d $OPENSHIFT_RIAK_DIR/lib/ ] || exit 0
 
 status -p $pidfile -l $(basename $lockfile) $NAME >/dev/null 2>&1
 running=$?
