@@ -72,7 +72,7 @@
               %{platform_bin_dir, "/usr/sbin"},
               {platform_data_dir, "<%= ENV['OPENSHIFT_RIAK_DIR'] %>"},
               {platform_etc_dir, "<%= ENV['OPENSHIFT_RIAK_DIR'] %>etc/"},
-              %{platform_lib_dir, "/usr/lib64/riak/lib"},
+              {platform_lib_dir, "<%= ENV['OPENSHIFT_RIAK_DIR'] %>lib64/lib"},
               {platform_log_dir, "<%= ENV['OPENSHIFT_RIAK_DIR'] %>log/"}
              ]},
 
