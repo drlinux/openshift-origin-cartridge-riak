@@ -5,6 +5,7 @@ locked_files:
 - metadata/
 - env/
 - env/*
+- erlang/*
 - etc/
 - etc/*
 - hooks/
@@ -12,6 +13,7 @@ locked_files:
 - tmp/
 - conf/
 - conf/*
+- riak/*
 - usr/*
 processed_templates:
 - '**/*.erb'
