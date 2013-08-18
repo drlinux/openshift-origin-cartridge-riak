@@ -1,0 +1,67 @@
+
+=====
+===== LOGGING STARTED Sat Aug 17 17:18:54 EDT 2013
+=====
+config is OK
+Exec: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../erts-5.9.1/bin/erlexec -boot /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../releases/1.4.1/riak              -config /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/app.config             -pa /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../lib/basho-patches             -args_file /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/vm.args -- console
+Root: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/..
+{error_logger,{{2013,8,17},{17,18,55}},"Protocol: ~p: register/listen error: ~p~n",["inet_tcp",eacces]}
+{error_logger,{{2013,8,17},{17,18,55}},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,<0.20.0>},{registered_name,[]},{error_info,{exit,{error,badarg},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,320}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{ancestors,[net_sup,kernel_sup,<0.10.0>]},{messages,[]},{links,[<0.17.0>]},{dictionary,[{longnames,true}]},{trap_exit,true},{status,running},{heap_size,377},{stack_size,24},{reductions,334}],[]]}
+{error_logger,{{2013,8,17},{17,18,55}},supervisor_report,[{supervisor,{local,net_sup}},{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{name,net_kernel},{mfargs,{net_kernel,start_link,[['riak@127.0.0.1',longnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}
+{error_logger,{{2013,8,17},{17,18,55}},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error},{reason,shutdown},{offender,[{pid,undefined},{name,net_sup},{mfargs,{erl_distribution,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]}]}
+{error_logger,{{2013,8,17},{17,18,55}},std_info,[{application,kernel},{exited,{shutdown,{kernel,start,[normal,[]]}}},{type,permanent}]}
+{"Kernel pid terminated",application_controller,"{application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}}"}
+
+Crash dump was written to: ./log/erl_crash.dump
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}})
+
+=====
+===== LOGGING STARTED Sat Aug 17 18:25:57 EDT 2013
+=====
+config is OK
+!!!!
+!!!! WARNING: ulimit -n is 1024; 4096 is the recommended minimum.
+!!!!
+Exec: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../erts-5.9.1/bin/erlexec -boot /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../releases/1.4.1/riak              -config /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/app.config             -pa /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../lib/basho-patches             -args_file /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/vm.args -- console
+Root: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/..
+{error_logger,{{2013,8,17},{18,25,59}},"Protocol: ~p: register/listen error: ~p~n",["inet_tcp",eacces]}
+{error_logger,{{2013,8,17},{18,25,59}},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,<0.20.0>},{registered_name,[]},{error_info,{exit,{error,badarg},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,320}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{ancestors,[net_sup,kernel_sup,<0.10.0>]},{messages,[]},{links,[<0.17.0>]},{dictionary,[{longnames,true}]},{trap_exit,true},{status,running},{heap_size,377},{stack_size,24},{reductions,334}],[]]}
+{error_logger,{{2013,8,17},{18,25,59}},supervisor_report,[{supervisor,{local,net_sup}},{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{name,net_kernel},{mfargs,{net_kernel,start_link,[['riak@127.0.0.1',longnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}
+{error_logger,{{2013,8,17},{18,25,59}},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error},{reason,shutdown},{offender,[{pid,undefined},{name,net_sup},{mfargs,{erl_distribution,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]}]}
+{error_logger,{{2013,8,17},{18,25,59}},std_info,[{application,kernel},{exited,{shutdown,{kernel,start,[normal,[]]}}},{type,permanent}]}
+{"Kernel pid terminated",application_controller,"{application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}}"}
+
+Crash dump was written to: ./log/erl_crash.dump
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}})
+
+=====
+===== LOGGING STARTED Sat Aug 17 18:26:35 EDT 2013
+=====
+config is OK
+Exec: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../erts-5.9.1/bin/erlexec -boot /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../releases/1.4.1/riak              -config /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/app.config             -pa /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../lib/basho-patches             -args_file /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/vm.args -- console
+Root: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/..
+{error_logger,{{2013,8,17},{18,26,39}},"Protocol: ~p: register/listen error: ~p~n",["inet_tcp",eacces]}
+{error_logger,{{2013,8,17},{18,26,39}},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,<0.20.0>},{registered_name,[]},{error_info,{exit,{error,badarg},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,320}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{ancestors,[net_sup,kernel_sup,<0.10.0>]},{messages,[]},{links,[<0.17.0>]},{dictionary,[{longnames,true}]},{trap_exit,true},{status,running},{heap_size,377},{stack_size,24},{reductions,334}],[]]}
+{error_logger,{{2013,8,17},{18,26,39}},supervisor_report,[{supervisor,{local,net_sup}},{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{name,net_kernel},{mfargs,{net_kernel,start_link,[['riak@127.0.0.1',longnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}
+{error_logger,{{2013,8,17},{18,26,39}},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error},{reason,shutdown},{offender,[{pid,undefined},{name,net_sup},{mfargs,{erl_distribution,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]}]}
+{error_logger,{{2013,8,17},{18,26,39}},std_info,[{application,kernel},{exited,{shutdown,{kernel,start,[normal,[]]}}},{type,permanent}]}
+{"Kernel pid terminated",application_controller,"{application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}}"}
+
+Crash dump was written to: ./log/erl_crash.dump
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}})
+
+=====
+===== LOGGING STARTED Sat Aug 17 18:27:18 EDT 2013
+=====
+config is OK
+Exec: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../erts-5.9.1/bin/erlexec -boot /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../releases/1.4.1/riak              -config /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/app.config             -pa /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../lib/basho-patches             -args_file /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/../etc/vm.args -- console
+Root: /var/lib/openshift/520ee6ad5004460c7d000017/app-root/data/riak/bin/..
+{error_logger,{{2013,8,17},{18,27,25}},"Protocol: ~p: register/listen error: ~p~n",["inet_tcp",eacces]}
+{error_logger,{{2013,8,17},{18,27,25}},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,<0.20.0>},{registered_name,[]},{error_info,{exit,{error,badarg},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,320}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{ancestors,[net_sup,kernel_sup,<0.10.0>]},{messages,[]},{links,[<0.17.0>]},{dictionary,[{longnames,true}]},{trap_exit,true},{status,running},{heap_size,377},{stack_size,24},{reductions,334}],[]]}
+{error_logger,{{2013,8,17},{18,27,25}},supervisor_report,[{supervisor,{local,net_sup}},{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{name,net_kernel},{mfargs,{net_kernel,start_link,[['riak@127.0.0.1',longnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}
+{error_logger,{{2013,8,17},{18,27,25}},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error},{reason,shutdown},{offender,[{pid,undefined},{name,net_sup},{mfargs,{erl_distribution,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]}]}
+{error_logger,{{2013,8,17},{18,27,25}},std_info,[{application,kernel},{exited,{shutdown,{kernel,start,[normal,[]]}}},{type,permanent}]}
+{"Kernel pid terminated",application_controller,"{application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}}"}
+
+Crash dump was written to: ./log/erl_crash.dump
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{shutdown,{kernel,start,[normal,[]]}}})
